@@ -14,7 +14,7 @@ class _AddTodoState extends State<AddTodo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Add Todo",
           style: TextStyle(color: Colors.white),
         ),
@@ -26,16 +26,16 @@ class _AddTodoState extends State<AddTodo> {
           children: [
             TextFormField(
               controller: todoController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Todo",
               ),
             ),
-            SizedBox(height: 20),
+           const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context, todoController.text);
               },
-              child: Text("Add Todo"),
+              child: const Text("Add Todo"),
             ),
           ],
         ),

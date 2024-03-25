@@ -32,7 +32,7 @@ class _TodoListState extends State<TodoList> {
       appBar: AppBar(
         title: Text(
           "Welcome $username",
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue,
       ),
@@ -60,21 +60,21 @@ class _TodoListState extends State<TodoList> {
                   value: todos[index].isCompleted,
                 ),
                 trailing: IconButton(
-                    icon: Icon(Icons.delete),
+                    icon: const Icon(Icons.delete),
                     onPressed: () {
                       showDialog(
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: Text("Delete Todo"),
-                              content: Text(
+                              title: const Text("Delete Todo"),
+                              content: const Text(
                                   "Are you sure you want to delete this todo?"),
                               actions: [
                                 TextButton(
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
-                                  child: Text("Cancel"),
+                                  child: const Text("Cancel"),
                                 ),
                                 // show bottom sheet after deleting
                                 TextButton(
@@ -84,12 +84,12 @@ class _TodoListState extends State<TodoList> {
                                     });
                                     Navigator.pop(context);
                                     ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
+                                      const SnackBar(
                                           content: Text("Todo deleted"),
                                           duration: Duration(seconds: 5)),
                                     );
                                   },
-                                  child: Text("Delete"),
+                                  child: const Text("Delete"),
                                 ),
                               ],
                             );
