@@ -13,6 +13,13 @@ class _LoginState extends State<Login> {
   final passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -64,7 +71,7 @@ class _LoginState extends State<Login> {
                     });
                   }
                 },
-                child: const Text("Login"),
+                child: const Text("Login",),
               ),
             ],
           ),
