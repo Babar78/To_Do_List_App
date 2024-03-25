@@ -43,18 +43,15 @@ class _TodoListState extends State<TodoList> {
           itemBuilder: (context, index) {
             return Container(
               decoration: BoxDecoration(
-                color: Colors.black12,
-                border: Border.all(color: Colors.black),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(8),
-                ),
-              ),
+                  color: Colors.black12,
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(8.0)),
               margin: const EdgeInsets.only(top: 8.0),
               child: ListTile(
                 leading: Checkbox(
                   onChanged: (value) {
                     setState(() {
-                      todos[index].isCompleted = value!;
+                      todos[index].isCompleted = value;
                     });
                   },
                   value: todos[index].isCompleted,
